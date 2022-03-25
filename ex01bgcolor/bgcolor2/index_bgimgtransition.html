@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <style>
+    button {
+      background-color: transparent;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+    body{
+      margin:0;
+      background-color: lightyellow;
+      transition: all 1s;
+      height: 2000px;
+    }
+    .bgcolor--blue{
+      background-color: lightblue;
+    }
+    .bgcolor--gray {
+      background-color: lightgray;
+    }
+    .btns {
+      position: fixed;
+      width: 100%;
+      margin: auto;
+      /* background-color: rgb(214, 135, 135); */
+    }
+    .btns .container {
+      position: relative;
+      width: 900px;
+      padding: 30px;
+      background-color: transparent;
+      transition: 0.3s;
+      margin: auto;
+      text-align: center;
+      border-radius: 0 0 10px 10px;
+    }
+    .btns .container.bgshow {
+      padding: 20px;
+      background-color: #9accd9;
+    }
+    .bg__img {
+      margin: 0;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background: url('bg.png');
+      transition: all 1s;
+      opacity: 0;
+    }
+    .bg__img--show {
+      opacity: 1;
+    }
+    .btns__menu button {
+      font-size: 16px;
+      font-weight: 600;
+      color: #194035;
+      border: 2px solid #4D8C7A;
+      width: 200px;
+      height: 40px;
+      border-radius: 6px;
+      margin: 4px;
+      cursor: pointer;
+      background-color: #9accd9;
+      transition: 0.3s;
+    }
+    .btns__menu button:hover {
+      background-color: white;
+      border: 2px dotted #4d858c;
+    }
+    .btns__toggle-btn {
+      position: absolute;
+      top: 40px;
+      right: 32px;
+      font-size: 24px;
+      color: #194035;
+      transition: 0.3s;
+      display: none;
+    }
+    .btns__toggle-btn.bgshow {
+      top: 32px;
+      width: 20px;
+      height: 20px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="bg__img"></div>
+  <div class="btns">
+    <div class="container">
+      <div class="btns__menu">
+        <button class="btn_toggle">배경색상변경 토글버튼</button>
+        <button class="btn--reset">배경색상 리셋</button>
+        <button class="btn--bggray">배경색상변경 그레이</button>
+        <button class="btn--bgimg">배경이미지</button>
+      </div>
+      <button class="btns__toggle-btn">
+        <span class="material-icons">
+          menu
+        </span>
+      </button>
+    </div>
+    
+  </div>
+  <script>
+    const bgContainer = document.querySelector('.bg__img');
+    const btnToggle = document.querySelector('.btn_toggle');
+    // addEventListener('이벤트', 실행함수);
+    btnToggle.addEventListener('click', function () {
+      bgContainer.classList.remove('bg__img--show');
+      document.body.classList.toggle('bgcolor--blue');
+      // console.log('버튼클릭');
+    });
+    const btnReset = document.querySelector('.btn--reset');
+    btnReset.addEventListener('click', function () {
+      bgContainer.classList.remove('bg__img--show');
+      document.body.classList.remove('bgcolor--blue', 'bgcolor--gray','bg--img');
+      
+    });
+
+    const btnBgGray = document.querySelector('.btn--bggray');
+    btnBgGray.addEventListener('click', function () {
+      bgContainer.classList.remove('bg__img--show');
+      document.body.classList.add('bgcolor--gray');
+    });
+    const btnBgImg = document.querySelector('.btn--bgimg');
+    btnBgImg.addEventListener('click', function () {
+      // document.body.classList.add('bg--img');
+      bgContainer.classList.add('bg__img--show');
+    });
+
+    const navContainer = document.querySelector('.btns .container');
+    const navToggle = document.querySelector('.btns__toggle-btn');
+    document.addEventListener('scroll', function () {
+      console.log(window.scrollY);
+      if (window.scrollY > 60) {
+        navContainer.classList.add('bgshow');
+        navToggle.classList.add('bgshow');
+        console.log('show');
+      } else {
+        navContainer.classList.remove('bgshow');
+        navToggle.classList.remove('bgshow');
+      }
+    });
+
+
+
+  </script>
+  
+</body>
+</html>

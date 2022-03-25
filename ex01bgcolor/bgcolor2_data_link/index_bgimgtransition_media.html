@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="media.css">
+</head>
+<body>
+  <div class="bg__img"></div>
+  <div class="btns">
+    <div class="container">
+      <div class="btns__menu">
+        <button class="btn_toggle">배경색상변경 토글버튼</button>
+        <button class="btn--reset">배경색상 리셋</button>
+        <button class="btn--bggray">배경색상변경 그레이</button>
+        <button class="btn--bgimg">배경이미지</button>
+      </div>
+      <button class="btns__toggle-btn">
+        <span class="material-icons">
+          menu
+        </span>
+      </button>
+    </div>
+  </div>
+  <section id="home">
+    <div class="wrapper">
+      <h1>Home</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quisquam. Eius necessitatibus sit impedit eum culpa sed, corporis voluptate commodi officia similique. Possimus ullam nesciunt impedit sequi, ab corrupti molestiae.</h3>
+    </div>
+  </section>
+  <section id="About">
+    <div class="wrapper">
+      <h1>About</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quisquam. Eius necessitatibus sit impedit eum culpa sed, corporis voluptate commodi officia similique. Possimus ullam nesciunt impedit sequi, ab corrupti molestiae.</h3>
+    </div>
+  </section>
+  <section id="Skills">
+    <div class="wrapper">
+      <h1>Skills</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quisquam. Eius necessitatibus sit impedit eum culpa sed, corporis voluptate commodi officia similique. Possimus ullam nesciunt impedit sequi, ab corrupti molestiae.</h3>
+    </div>
+  </section>
+  <section id="home">
+    <div class="wrapper">
+      <h1>Works</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quisquam. Eius necessitatibus sit impedit eum culpa sed, corporis voluptate commodi officia similique. Possimus ullam nesciunt impedit sequi, ab corrupti molestiae.</h3>
+    </div>
+  </section>
+  <section id="Contact">
+    <div class="wrapper">
+      <h1>Contact Me</h1>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quisquam. Eius necessitatibus sit impedit eum culpa sed, corporis voluptate commodi officia similique. Possimus ullam nesciunt impedit sequi, ab corrupti molestiae.</h3>
+    </div>
+  </section>
+
+  <button class="arrow-up">
+    <span class="material-icons">
+      arrow_upward
+    </span>
+  </button>
+  <script>
+    const bgContainer = document.querySelector('.bg__img');
+    const btnToggle = document.querySelector('.btn_toggle');
+    // addEventListener('이벤트', 실행함수);
+    btnToggle.addEventListener('click', function () {
+      bgContainer.classList.remove('bg__img--show');
+      document.body.classList.toggle('bgcolor--blue');
+      // console.log('버튼클릭');
+    });
+    const btnReset = document.querySelector('.btn--reset');
+    btnReset.addEventListener('click', function () {
+      bgContainer.classList.remove('bg__img--show');
+      document.body.classList.remove('bgcolor--blue', 'bgcolor--gray','bg--img');
+      
+    });
+
+    const btnBgGray = document.querySelector('.btn--bggray');
+    btnBgGray.addEventListener('click', function () {
+      bgContainer.classList.remove('bg__img--show');
+      document.body.classList.add('bgcolor--gray');
+    });
+    const btnBgImg = document.querySelector('.btn--bgimg');
+    btnBgImg.addEventListener('click', function () {
+      // document.body.classList.add('bg--img');
+      bgContainer.classList.add('bg__img--show');
+    });
+
+    const navContainer = document.querySelector('.btns .container');
+    document.addEventListener('scroll', function () {
+      console.log(window.scrollY);
+      if (window.scrollY > 60) {
+        navContainer.classList.add('bgshow');
+        console.log('show');
+      } else {
+        navContainer.classList.remove('bgshow');
+      }
+    });
+    const btnsMenu = document.querySelector('.btns__menu');
+    const btnsToggleBtn = document.querySelector('.btns__toggle-btn');
+    btnsToggleBtn.addEventListener('click', function() {
+      btnsMenu.classList.toggle('open');
+    });
+
+    const arrowUp = document.querySelector('.arrow-up');
+    document.addEventListener('scroll', function() {
+      if ( window.scrollY > 500) {
+        arrowUp.classList.add('visible');
+      } else {
+        arrowUp.classList.remove('visible');
+      }
+    })
+
+    const home = document.querySelector('#home');
+    arrowUp.addEventListener('click', function () {
+      home.scrollIntoView({behavior:"smooth"});
+    });
+
+
+
+  </script>
+  
+</body>
+</html>
