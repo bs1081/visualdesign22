@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"
+      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="btns">
+        <div class="container">
+            <div class="btns__menu">
+                <button class="btn home">Home</button>
+                <button class="btn about">About</button>
+                <button class="btn skills">Skills</button>
+                <button class="btn works">Works</button>
+                <button class="btn contact">Contact</button>
+            </div>
+        </div>
+    </div>
+
+    <section id="home">
+        <div class="wrapper">
+            <h1>Home</h1>
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum voluptas fuga fugiat aut vel reiciendis aliquam ab voluptates repellat exercitationem inventore necessitatibus quos sint veritatis, non odit totam accusantium minima!</h3>
+        </div>
+    </section>
+    <section id="about">
+        <div class="wrapper">
+            <h1>About</h1>
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum voluptas fuga fugiat aut vel reiciendis aliquam ab voluptates repellat exercitationem inventore necessitatibus quos sint veritatis, non odit totam accusantium minima!</h3>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="wrapper">
+            <h1>Skills</h1>
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum voluptas fuga fugiat aut vel reiciendis aliquam ab voluptates repellat exercitationem inventore necessitatibus quos sint veritatis, non odit totam accusantium minima!</h3>
+        </div>
+    </section>
+    <section id="works">
+        <div class="wrapper">
+            <h1>Works</h1>
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum voluptas fuga fugiat aut vel reiciendis aliquam ab voluptates repellat exercitationem inventore necessitatibus quos sint veritatis, non odit totam accusantium minima!</h3>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="wrapper">
+            <h1>Contact</h1>
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum voluptas fuga fugiat aut vel reiciendis aliquam ab voluptates repellat exercitationem inventore necessitatibus quos sint veritatis, non odit totam accusantium minima!</h3>
+        </div>
+    </section>
+    <button class="arrow-up">
+        <span class="material-icons-outlined">
+            arrow_upward
+        </span>
+    </button>
+    <script>
+        const btnHome = document.querySelector('.home');
+        const sectionHome = document.querySelector('#home');
+        btnHome.addEventListener('click', function() {
+            sectionHome.scrollIntoView({behavior:"smooth", blcok:"center"});
+        })
+        const btnAbout = document.querySelector('.about');
+        const sectionAbout = document.querySelector('#about');
+        btnAbout.addEventListener('click', function() {
+            sectionAbout.scrollIntoView({behavior:"smooth", blcok:"center"});
+        })
+        const btnSkills = document.querySelector('.skills');
+        const sectionSkills = document.querySelector('#skills');
+        btnSkills.addEventListener('click', function() {
+            sectionSkills.scrollIntoView({behavior:"smooth", blcok:"center"});
+        })
+        const btnWorks = document.querySelector('.works');
+        const sectionWorks = document.querySelector('#works');
+        btnWorks.addEventListener('click', function() {
+            sectionWorks.scrollIntoView({behavior:"smooth", blcok:"center"});
+        })
+        const btnContact = document.querySelector('.contact');
+        const sectionContact = document.querySelector('#contact');
+        btnContact.addEventListener('click', function() {
+            sectionContact.scrollIntoView({behavior:"smooth", blcok:"center"});
+        })
+        const arrowUp = document.querySelector('.arrow-up')
+        arrowUp.addEventListener('click', function() {
+            sectionHome.scrollIntoView({behavior:"smooth", blcok:"center"});
+        })
+        document.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                arrowUp.classList.add('show');
+            } else {
+                arrowUp.classList.remove('show');
+            }
+        })
+    </script>
+</body>
+</html>
