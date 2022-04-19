@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box orange"></div>
+  <div class="box grey"></div>
+  <div class="box green"></div>
+  <div class="line horizontal"></div>
+  <div class="line vertical"></div>
+  <div  class="target"></div>
+  <span class="tag">Hello</span> 
+  <script>
+    // const horizontal = document.querySelector('.horizontal');
+    // const vertical = document.querySelector('.vertical');
+    const target = document.querySelector('.target');
+    const tag = document.querySelector('.tag');
+    addEventListener('load', function () {
+      const targetRect = target.getBoundingClientRect();
+      // console.log(targetRect);
+      const targetHalfWidth = targetRect.width / 2;
+      const targetHalfHeight = targetRect.height / 2;
+      let curX = 0;
+      let curY = 0;
+      let mouseX = 0;
+      let mouseY = 0;
+      document.addEventListener('mousemove', function (event){
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+        gsap.to(".horizontal", {duration:.5, y:mouseY });
+        gsap.to(".vertical", {duration:.5,x:mouseX });
+        gsap.to(".target", {duration:.5,x:mouseX, y:mouseY });
+        gsap.to(".tag", {duration:.5,x:mouseX, y:mouseY });
+        tag.innerHTML = `${Math.ceil(mouseX)}px ${Math.ceil(mouseY)}px`;
+        
+      });
+      // function animate() {
+      //   requestAnimationFrame(animate);
+      //   curX += (mouseX - curX) * 0.1;
+      //   curY += (mouseY - curY) * 0.1;
+
+      //   horizontal.style.transform = `translateY(${curY}px)`;
+      //   vertical.style.transform = `translateX(${curX}px)`;
+      //   target.style.transform = `translate(${curX - targetHalfWidth}px, ${curY - targetHalfHeight}px)`;
+      //   tag.style.transform = `translate(${curX}px, ${curY}px)`;
+      //   tag.innerHTML = `${Math.ceil(curX)}px ${Math.ceil(curY)}px`;
+      // }
+      // animate();
+
+      
+
+    });
+    
+    const aniDuration = 3;
+    gsap.to("h2.title", {duration: aniDuration, opacity: 0.3});
+    gsap.to(".box", {duration: aniDuration, delay:3, x: 300, y: 100, ease: "elastic.out(1, 0.3)", opacity: 1});
+    gsap.to(".green", {duration: aniDuration, rotation: 360, scale: 0.5, repeat:-1, yoyo:true});
+  </script>
+  
+</body>
+</html>
