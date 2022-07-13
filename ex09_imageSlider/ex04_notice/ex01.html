@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <style>
+        .swiper {
+            width: 600px;
+            height: 62px;
+            background-color: skyblue;
+            overflow: hidden;
+        }
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="javascript:void(0)">크리스마스 & 연말연시 스타벅스 매장 영업시간 변경</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:void(0)">[당첨자 발표]크리스마스 & 연말연시 스타벅스 매장 영업시간 변경</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:void(0)">스타벅스커피 코리아 크리스마스 & 연말연시 스타벅스 매장 영업시간 변경</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="javascript:void(0)">[당첨자 발표] 뉴이어 전자영수증 이벤트타벅스 매장 영업시간 변경</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        new Swiper('.swiper', {
+            direction: 'vertical',
+            autoplay: true,
+            loop: true
+        })
+
+    </script>
+</body>
+</html>

@@ -13,7 +13,6 @@
       position: relative;
       height: 100%;
     }
-
     body {
       background: skyblue;
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -22,25 +21,50 @@
       margin: 0;
       padding: 0;
     }
-
     .swiper {
       width: 100%;
-      padding-top: 50px;
+      padding-top: 200px;
       padding-bottom: 50px;
     }
-
     .swiper-slide {
       background-position: center;
       background-size: cover;
       width: 300px;
       height: 380px;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
     }
-
-    .swiper-slide img {
+    /* .swiper-slide img {
       display: block;
       width: 100%;
-      /* border: 4px solid lightgray; */
+    } */
+    .swiper-slide .imgBx {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
     }
+    .swiper-slide .imgBx img {
+      width: 100%;
+    }
+    .swiper-slide .detail {
+      box-sizing: border-box;
+      font-size: 20px;
+      padding: 20px;
+    }
+    .swiper-slide .detail h3 {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      text-align: center;
+      line-height: 20px;
+    }
+    .swiper-slide .detail h3 span {
+      font-size: 16px;
+      color: #f44336;
+    }
+
+  
   </style>
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
